@@ -20,3 +20,6 @@ A ideia é fazer o deploy de 4 imagens
 - │   ├── Dockerfile
 - │   └── requirements.txt
 - └── readme.md
+
+
+- Executar build.sh
