@@ -6,3 +6,8 @@ RUN apt-get update && \
     apt-get install -y sudo
 
 RUN python --version
+
+RUN apt-get update
+RUN echo "### TEstando ###"
+
+RUN echo "### Finish Build ###"

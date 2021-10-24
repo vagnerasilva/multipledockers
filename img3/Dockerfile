@@ -6,3 +6,5 @@ RUN apt-get update && \
     apt-get install -y sudo
 
 RUN python --version
+
+RUN echo "### Finish Build ###"
