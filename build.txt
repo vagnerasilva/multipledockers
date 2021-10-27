@@ -76,3 +76,16 @@ do
   done
   echo
 done
+
+# 1 Listar imagens com a tag 
+# 2 listar pastas das imagens e seus nomes respectivamente
+
+# 3 criar objeto com tag sha256 size e version
+
+# 4 depois do build criar lista com tag sha 256 e size
+
+# 5 criar nova versao para as imagens com sha256 diferentes e fazer push somente da lista nova
+
+curl https://registry.hub.docker.com/v2/repositories/$REPOSITORY/tags?page_size=10000 | jq '.results[] | { name: .name, architectures: ([ (.images[] | if .variant? then .os + "/" + .architecture + .variant? else .os + "/" + .architecture end) ] | join(", ")) }'
+
+curl https://registry.hub.docker.com/v2/repositories/vagnerasilva/container-img4/tags?page_size=10000 | jq '.results[] | { name: .name, architectures: ([ (.images[] | if .variant? then .os + "/" + .architecture + .variant? else .os + "/" + .architecture end) ] | join(", ")) }'
